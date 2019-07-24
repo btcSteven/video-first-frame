@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>capture screen</title>
+</head>
+<body>
+<video id="video" controls="controls">
+  <source src="./mov_bbb.mp4">
+</video>
+<p>我是第一帧</p>
+<div id="output"></div>
+<script type="text/javascript">
+  (function(){
+    var video, output, img;
+    var scale = 0.8;
+    var initialize = function() {
+      output = document.getElementById("output");
+      video = document.getElementById("video");
+      video.addEventListener('loadeddata',captureImage);
+    };
+
+    var captureImage = function() {
+      var canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth * scale;
+      canvas.height = video.videoHeight * scale;
+      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+      
+      img = document.createElement("img");
+      img.src = canvas.toDataURL("image/jpeg", 1.0);
+      output.appendChild(img);
+    };
+
+    document.getElementById('video').setAttribute('poster','./cat.jpeg') //设置任意图片第一帧
+    // document.getElementById('video').setAttribute('poster',img.src) //设置视频第一帧
+
+    initialize();
+  })();
+</script>
+</body>
+</html>
