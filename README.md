@@ -1,5 +1,18 @@
 # video-first-frame
+
 如何获取视频第一张帧
+
+##可供选择的视频链接
+
+ 1、https://media.w3.org/2010/05/...<br/>
+ 2、http://www.w3school.com.cn/ex...<br/>
+ 3、https://www.w3schools.com/htm...<br/>
+ 4、http://clips.vorwaerts-gmbh.d...<br/>
+ 5、https://player.vimeo.com/exte...<br/>
+ 6、https://player.vimeo.com/exte...<br/>
+ 7、https://player.vimeo.com/exte...<br/>
+ 8、https://player.vimeo.com/exte...<br/>
+ 
 1、视频是同源的，否则需要处理跨域问题
 ```
     var initialize = function() {
